@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/cover.css}" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header th:insert="blocks/header :: header"></header>
+
+<div class="px-3 mt-5 mb-5">
+    <h1>Adding feature</h1>
+    <form action="/feature/add" method="post">
+        <input type="text" name="title" placeholder="Write title for feature" class="form-control"/><br/>
+        <input type="text" name="name" placeholder="Write name for feature" class="form-control"/><br/>
+        <textarea name="text" placeholder="Write text for feature" class="form-control"></textarea><br/>
+
+        <button type="submit" class="btn btn-success">Add feature</button>
+    </form>
+
+</div>
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+</div>
+
+</body>
+</html>

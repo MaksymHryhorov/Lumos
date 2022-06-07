@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/cover.css}" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header th:insert="blocks/header :: header"></header>
+
+    <main class="px-3 mt-4">
+        <div th:each="el: ${post}" class="alert alert-info mt-2">
+            <h2 th:text="${el.title}"></h2>
+            <p th:text="${el.name}"></p>
+            <p th:text="${'Views: ' + el.views}"></p>
+            <a th:href="'/features/' + ${el.id} + '/edit'" class="btn btn-info">Edit</a>
+            <form th:action="'/features/' + ${el.id} + '/delete' " method="post">
+                <button type="submit"  class="btn btn-info">Delete
+                </button>
+            </form>
+
+        </div>
+    </main>
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+</div>
+
+</body>
+</html>
