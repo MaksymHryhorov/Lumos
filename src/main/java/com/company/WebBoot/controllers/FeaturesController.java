@@ -2,9 +2,11 @@ package com.company.WebBoot.controllers;
 
 import com.company.WebBoot.model.Features;
 import com.company.WebBoot.repository.FeaturesRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -13,8 +15,11 @@ import java.util.Optional;
 @Controller
 public class FeaturesController {
 
-    @Autowired
-    private FeaturesRepository featuresRepository;
+    private final FeaturesRepository featuresRepository;
+
+    public FeaturesController(FeaturesRepository featuresRepository) {
+        this.featuresRepository = featuresRepository;
+    }
 
     @GetMapping("/features")
     public String featuresPage(Model model) {
@@ -34,6 +39,7 @@ public class FeaturesController {
                              @RequestParam String name,
                              @RequestParam String text,
                              Model model) {
+
 
         Features features = new Features(title,name,text);
         featuresRepository.save(features);

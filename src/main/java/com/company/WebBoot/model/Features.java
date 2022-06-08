@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Features {
@@ -12,7 +14,18 @@ public class Features {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String title, name, text;
+    @NotEmpty(message = "Title shouldn't be empty")
+    @Size(message = "Size symbols of the title must be more than 5")
+    private String title;
+
+    @NotEmpty(message = "Name shouldn't be empty")
+    @Size(message = "Size symbols of the title must be more than 5")
+    private String name;
+
+    @NotEmpty(message = "Test shouldn't be empty")
+    @Size(message = "Size symbols of the title must be more than 5")
+    private String text;
+
     private int views;
 
     public Features(String title, String name, String text) {

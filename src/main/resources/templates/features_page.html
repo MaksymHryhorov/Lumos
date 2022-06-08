@@ -14,7 +14,6 @@
 
     <main class="px-3 mt-4">
         <h1>Features</h1>
-        <!--/*@thymesVar id="features" type="com"*/-->
         <div th:each="el: ${features}" class="alert alert-info mt-2">
             <h2 th:text="${el.title}"></h2>
             <p th:text="${el.name}"></p>
