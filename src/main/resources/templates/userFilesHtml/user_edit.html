@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Edit Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <link th:href="@{/css/cover.css}" rel="stylesheet">
@@ -12,19 +12,17 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header th:insert="blocks/header :: header"></header>
 
-    <main class="px-sm-5 mt-4">
-        <div th:each="el: ${post}" class="alert alert-info mt-2">
-            <h2 th:text="${el.title}"></h2>
-            <p th:text="${el.name}"></p>
-            <p th:text="${el.text}"></p>
+    <div class="px-3 mt-5 mb-5">
+        <h1>Editing User</h1>
+        <div th:each="el: ${userEdit}" class="alert alert-info mt-2">
+            <form method="post">
+                <input type="text" name="firstName" th:value="${el.firstName}" class="form-control"/><br/>
+                <input type="text" name="secondName" th:value="${el.secondName}" class="form-control"/><br/>
 
-            <form class="mt-2" th:action="'/features/' + ${el.id} + '/delete' " method="post">
-                <a th:href="'/features/' + ${el.id} + '/edit'" class="btn btn-info">Edit</a>
-                <button type="submit"  class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-success">Edit User</button>
             </form>
-
         </div>
-    </main>
+    </div>
 
     <footer th:insert="blocks/footer :: footer"></footer>
 </div>

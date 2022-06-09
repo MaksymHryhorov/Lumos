@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/cover.css}" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header th:insert="blocks/header :: header"></header>
+
+    <div class="px-3 mt-5 mb-5">
+        <h1>Adding user</h1>
+        <form action="/user/add" method="post">
+            <input type="text" name="firstName" placeholder="Write First Name" class="form-control"/><br/>
+            <input type="text" name="secondName" placeholder="Write Second Name" class="form-control"/><br/>
+            <button type="submit" class="btn-success btn">Add User</button>
+        </form>
+    </div>
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+</div>
+</body>
+
+</html>
