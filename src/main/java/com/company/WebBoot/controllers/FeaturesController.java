@@ -24,12 +24,12 @@ public class FeaturesController {
         Iterable<Features> features = featuresRepository.findAll();
         model.addAttribute("features", features);
 
-        return "features_page";
+        return "featuresHtml/features_page";
     }
 
     @GetMapping("/feature/add")
     public String featureAdd(Model model) {
-        return "feature_add";
+        return "featuresHtml/feature_add";
     }
 
     @PostMapping("/feature/add")
@@ -58,7 +58,7 @@ public class FeaturesController {
         features.ifPresent(arrayList::add);
         model.addAttribute("post", arrayList);
 
-        return "features_detail";
+        return "featuresHtml/features_detail";
     }
 
     @GetMapping("/features/{id}/edit")
@@ -70,7 +70,7 @@ public class FeaturesController {
         features.ifPresent(arrayList::add);
         model.addAttribute("post", arrayList);
 
-        return "features_edit";
+        return "featuresHtml/features_edit";
     }
 
     @PostMapping("/features/{id}/edit")
