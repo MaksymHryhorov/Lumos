@@ -2,9 +2,10 @@ package com.company.WebBoot.controllers;
 
 import com.company.WebBoot.model.Features;
 import com.company.WebBoot.repository.FeaturesRepository;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

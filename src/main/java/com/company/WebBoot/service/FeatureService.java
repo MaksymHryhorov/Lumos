@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface FeatureService {
     Features getById(Long id);
-    void save(Features user);
+
+    Features save(Features features);
+
     void delete(Long id);
+
     List<Features> getAll();
 }

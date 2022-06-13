@@ -11,7 +11,7 @@ public class WebBootApplication implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").
-				addResourceLocations("/resources/");
+				addResourceLocations("/resources/");;
 	}
 
 	public static void main(String[] args) {
