@@ -6,7 +6,7 @@ import java.util.List;
 
 public class UserServiceImpImplementation implements UserService {
     @Override
-    public Users getById(Long id) {
+    public Users getById(Integer id) {
         return null;
     }
 

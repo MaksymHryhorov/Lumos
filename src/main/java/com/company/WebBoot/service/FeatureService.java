@@ -2,14 +2,19 @@ package com.company.WebBoot.service;
 
 import com.company.WebBoot.model.Features;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface FeatureService {
-    Features getById(Long id);
 
-    Features save(Features features);
+    Features getById(Integer id);
 
-    void delete(Long id);
+    void save(Features features);
+
+    void delete(Integer id);
 
     List<Features> getAll();
+
+    ArrayList<Features> detail(Integer id);
+
 }

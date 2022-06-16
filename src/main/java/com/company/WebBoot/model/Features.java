@@ -20,10 +20,23 @@ public class Features {
     @NotNull
     private int views;
 
-    public Features(String title, String name, String text) {
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users user;
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
+    }
+
+    public Features(String title, String name, String text, Users user) {
         this.title = title;
         this.name = name;
         this.text = text;
+        this.user = user;
     }
 
     public Features() {
@@ -69,4 +82,5 @@ public class Features {
     public void setViews(int views) {
         this.views = views;
     }
+
 }

@@ -1,10 +1,9 @@
 package com.company.WebBoot.model;
 
 import com.sun.istack.NotNull;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Users {
@@ -23,6 +22,9 @@ public class Users {
         this.firstName = firstName;
         this.secondName = secondName;
     }
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Features> features;
 
     public Users() {
     }
