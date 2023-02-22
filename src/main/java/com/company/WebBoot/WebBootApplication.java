@@ -8,16 +8,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @SpringBootApplication
 public class WebBootApplication implements WebMvcConfigurer {
 
-	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**").
-				addResourceLocations("/resources/");;
-	}
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**")
+                .addResourceLocations("/resources/")
+                .addResourceLocations("/resources/static/images/**");
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(WebBootApplication.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(WebBootApplication.class, args);
 
-	}
+    }
 
 
 }

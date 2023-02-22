@@ -7,36 +7,31 @@
     <link th:href="@{/css/cover.css}" rel="stylesheet">
 </head>
 
-<body class="d-flex h-100 text-center text-white bg-dark">
+<body class="d-flex h-100 text-center text-black">
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header th:insert="blocks/header :: header"></header>
 
-    <main style="margin-top: 5%" class="">
+    <!--<img th:src="@{/images/P_1.png}"/>-->
+
+    <main style="" class="">
         <div class="py-5">
+            <h2 style="margin-bottom: 2%">Перечень послуг</h2>
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <div th:each="el: ${features}" class="">
-                        <h2 th:text="${el.title}"></h2>
-
                         <div class="col">
                             <div class="card shadow-sm">
-                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                                     preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                                    <rect width="100%" height="100%" fill="#55595c"></rect>
-                                </svg>
 
                                 <div class="card-body">
                                     <h5 class="text-dark" th:text="${el.name}"></h5>
                                     <p class="text-dark" style="text-align: left" th:text="${el.text}"></p>
 
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center">
                                         <div class="btn-group">
                                             <a th:href="'/features/' + ${el.id}"
-                                               class="btn btn-sm btn-outline-secondary">Detail</a>
+                                               class="btn btn-sm btn-outline-secondary">Деталіше про послугу</a>
                                         </div>
-                                        <small class="text-muted">9 mins</small>
                                     </div>
                                 </div>
                             </div>
@@ -46,6 +41,66 @@
             </div>
         </div>
 
+
+        <div class="">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h3>Вкажіть, яка послуга вам паотрібна ям задайте питання</h3>
+                        <p>Отримайте безкоштовну консультацію та дізнайтеся ціну послуги нотаріуса в Харкові</p>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control"
+                                   placeholder="Напишіть яка послуга вам потрібна"
+                                   aria-label="Object" aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Імя</span>
+                            <input type="text" class="form-control" placeholder="Імя" aria-label="name">
+                            <span class="input-group-text">@</span>
+                            <input type="text" class="form-control" placeholder="Пошта" aria-label="email">
+                            <span class="input-group-text">+380</span>
+                            <input type="text" class="form-control" placeholder="Телефон" aria-label="phone">
+                        </div>
+
+                        <button type="button" class="btn btn-success">Надіслати</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 2%" class="">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <div class="card-body bg-light bg-gradient text-dark">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 ui-corner-left">
+                                    <img th:src="@{/images/P2.jpg}" style="width: 85%"/>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <h5>Контакти нотаріуса</h5>
+                                    <div class="col">м. Харків пр.Науки 23/2</div>
+                                    <div class="col">тел. +380-000-000-000</div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <h5>Графік роботи нотаруса:</h5>
+                                    <div class="col">Понеділок: 09:00 - 18:00</div>
+                                    <div class="col">Вівторок: 09:00 - 18:00</div>
+                                    <div class="col">Середа: 09:00 - 18:00</div>
+                                    <div class="col">Четвер: 09:00 - 18:00</div>
+                                    <div class="col">Пятниця: 09:00 - 18:00</div>
+                                    <div class="col">Субота: 10:00 - 15:00</div>
+                                    <div class="col">Неділя: за домовленістю</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 
