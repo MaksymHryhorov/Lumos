@@ -7,7 +7,7 @@
     <link th:href="@{/css/cover.css}" rel="stylesheet">
 </head>
 
-<body class="d-flex h-100 text-center text-white bg-dark">
+<body class="d-flex h-100 text-center text-black">
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header th:insert="blocks/header :: header"></header>
@@ -18,6 +18,7 @@
             <form method="post">
                 <input type="text" name="firstName" th:value="${el.firstName}" class="form-control"/><br/>
                 <input type="text" name="secondName" th:value="${el.secondName}" class="form-control"/><br/>
+                <input type="text" name="email" th:value="${el.email}" class="form-control"/><br/>
 
                 <button type="submit" class="btn btn-success">Edit User</button>
             </form>

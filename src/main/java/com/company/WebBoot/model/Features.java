@@ -22,23 +22,10 @@ public class Features {
     @NotNull
     private int views;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private Users user;
-
-    public Users getUser() {
-        return user;
-    }
-
-    public void setUser(Users user) {
-        this.user = user;
-    }
-
-    public Features(String title, String name, String text, Users user, double cost) {
+    public Features(String title, String name, String text, double cost) {
         this.title = title;
         this.name = name;
         this.text = text;
-        this.user = user;
         this.cost = cost;
     }
 

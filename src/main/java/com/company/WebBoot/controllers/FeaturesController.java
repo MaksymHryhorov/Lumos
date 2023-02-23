@@ -51,10 +51,7 @@ public class FeaturesController {
                              @RequestParam double cost,
                              Model model) {
 
-        Users users = new Users();
-        users.setUser_id(43);
-
-        Features features = new Features(title, name, text, users, cost);
+        Features features = new Features(title, name, text, cost);
         featureService.save(features);
 
         return "redirect:/features";

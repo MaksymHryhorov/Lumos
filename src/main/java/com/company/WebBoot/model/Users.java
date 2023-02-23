@@ -18,13 +18,18 @@ public class Users {
     @NotNull
     private String secondName;
 
-    public Users(String firstName, String secondName) {
+    @NotNull
+    private String email;
+
+    @NotNull
+    private String password;
+
+    public Users(String firstName, String secondName, String email, String password) {
         this.firstName = firstName;
         this.secondName = secondName;
+        this.email = email;
+        this.password = password;
     }
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<Features> features;
 
     public Users() {
     }
@@ -51,5 +56,21 @@ public class Users {
 
     public void setSecondName(String secondName) {
         this.secondName = secondName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

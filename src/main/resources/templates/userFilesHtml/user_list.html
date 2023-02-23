@@ -12,17 +12,11 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header th:insert="blocks/header :: header"></header>
 
-    <main class="px-3 mt-5">
-        <h2>Послуги</h2>
-        <div class="row">
-            <div th:each="element: ${users}" class="mt-3 ms-2 me-2 col w-auto">
-                <h3 th:text="${element.firstName + ' ' + element.secondName}"></h3>
-            </div>
-        </div>
-
-        <div th:each="element: ${users}">
+    <main class="px-3 mt-4">
+        <h2>Юзери</h2>
+        <div th:each="element: ${users}" class="alert alert-info mt-2">
+            <h3 th:text="${element.firstName + ' ' + element.secondName}"></h3>
             <a class="btn btn-light mt-3" th:href="'/users/' + ${element.user_id}">Detail</a>
-            <a class="btn btn-light mt-3" href="/user/add">Add</a>
         </div>
 
     </main>

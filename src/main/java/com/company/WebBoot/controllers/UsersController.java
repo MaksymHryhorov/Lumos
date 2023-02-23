@@ -39,10 +39,12 @@ public class UsersController {
     @PostMapping("/user/add")
     public String featureAdd(@RequestParam String firstName,
                              @RequestParam String secondName,
+                             @RequestParam String email,
+                             @RequestParam String password,
                              Model model) {
 
 
-        Users users = new Users(firstName,secondName);
+        Users users = new Users(firstName, secondName, email, password);
         usersRepository.save(users);
 
         return "redirect:/users";
@@ -51,7 +53,7 @@ public class UsersController {
     @GetMapping("/users/{id}")
     public String userDetail(@PathVariable(value = "id") int id,
                              Model model) {
-        if(!usersRepository.existsById(id))
+        if (!usersRepository.existsById(id))
             return "redirect:/user";
 
         Optional<Users> users = usersRepository.findById(id);

@@ -13,9 +13,11 @@
     <header th:insert="blocks/header :: header"></header>
 
     <main th:each="elmi: ${user}" class="px-sm-5 mt-4">
-        <h2 th:text="${'User id = ' + elmi.user_id}"></h2>
         <div th:each="el: ${user}" class="alert-light alert mt-3 col w-auto">
+            <h5 th:text="${'User id = ' + elmi.user_id}"></h5>
             <h4 th:text="${el.firstName + ' ' + el.secondName}"></h4>
+            <h4 th:text="${el.email}"></h4>
+            <br/>
 
             <form class="mt-2" th:action="'/users/' + ${el.user_id} + '/delete' " method="post">
                 <a th:href="'/users/' + ${el.user_id} + '/edit'" class="btn btn-info">Edit User</a>
