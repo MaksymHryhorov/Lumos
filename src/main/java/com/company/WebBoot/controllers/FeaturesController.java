@@ -48,13 +48,13 @@ public class FeaturesController {
     public String featureAdd(@RequestParam String title,
                              @RequestParam String name,
                              @RequestParam String text,
+                             @RequestParam double cost,
                              Model model) {
 
         Users users = new Users();
         users.setUser_id(43);
 
-        Features features = new Features(title, name, text, users);
-
+        Features features = new Features(title, name, text, users, cost);
         featureService.save(features);
 
         return "redirect:/features";
@@ -91,12 +91,14 @@ public class FeaturesController {
                                    @RequestParam String title,
                                    @RequestParam String name,
                                    @RequestParam String text,
+                                   @RequestParam double cost,
                                    Model model) {
 
         Features features = featuresRepository.findById(id).orElseThrow();
         features.setTitle(title);
         features.setName(name);
         features.setText(text);
+        features.setCost(cost);
 
         featuresRepository.save(features);
 

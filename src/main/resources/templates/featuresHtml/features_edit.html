@@ -7,17 +7,18 @@
     <link th:href="@{/css/cover.css}" rel="stylesheet">
 </head>
 
-<body class="d-flex h-100 text-center text-white bg-dark">
+<body class="d-flex h-100 text-center text-black">
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header th:insert="blocks/header :: header"></header>
 
     <div class="px-3 mt-5 mb-5">
-        <h1>Editing feature</h1>
+        <h1>Редагування послуги</h1>
         <div th:each="el: ${post}" class="alert alert-info mt-2">
             <form method="post">
                 <input type="text" name="title" th:value="${el.title}" class="form-control"/><br/>
                 <input type="text" name="name" th:value="${el.name}" class="form-control"/><br/>
+                <input type="text" name="cost" th:value="${el.cost}" class="form-control"/><br/>
                 <textarea name="text" class="form-control" th:text="${el.text}"/><br/>
 
                 <button type="submit" class="btn btn-success">Edit</button>

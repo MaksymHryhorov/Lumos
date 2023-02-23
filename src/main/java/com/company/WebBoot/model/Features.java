@@ -18,6 +18,8 @@ public class Features {
     @NotNull
     private String text;
     @NotNull
+    private double cost;
+    @NotNull
     private int views;
 
     @ManyToOne
@@ -32,11 +34,12 @@ public class Features {
         this.user = user;
     }
 
-    public Features(String title, String name, String text, Users user) {
+    public Features(String title, String name, String text, Users user, double cost) {
         this.title = title;
         this.name = name;
         this.text = text;
         this.user = user;
+        this.cost = cost;
     }
 
     public Features() {
@@ -75,8 +78,16 @@ public class Features {
         this.text = text;
     }
 
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
     public int getViews() {
         return views;
+    }
+
+    public double getCost() {
+        return cost;
     }
 
     public void setViews(int views) {
